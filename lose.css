@@ -1,0 +1,60 @@
+body{
+    display: flexbox;
+    justify-items: center;
+    align-items: center;
+   
+    background: linear-gradient(to left,aquamarine,bisque,aquamarine );
+}
+.p{
+    font-size: large;
+    font-weight: bolder;
+    font-style: oblique;
+   
+}
+.load{
+    font: optional;
+}
+.oya{
+    filter: brightness(1pc);
+    filter: blur(1px);
+    cursor: pointer;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left,aquamarine,aqua);
+    appearance:aquamarine;
+  position: absolute;
+  
+}
+.small{
+    font-size: xx-small;
+}
+button{
+   width: 33pc;
+   height: 9pc;
+   background: burlywood;
+}
+button:hover{
+    background: cornsilk;
+    cursor: pointer;
+    color: aqua;
+}
+a{
+    color:darkolivegreen;
+  text-decoration: none;
+}
+a:hover{
+    color: darkcyan;
+}
+.big{
+    font-size: 4pc;
+}
+.result{
+    color:darkgreen;
+}
+.co{
+    font-weight: bold;
+    color: darkgreen;
+}

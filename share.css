@@ -1,0 +1,35 @@
+/* style.css */
+.share-container {
+    position: relative;
+    display: inline-block;
+}
+
+#shareBtn {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#shareMenu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-width: 160px;
+}
+
+#shareMenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#shareMenu a:hover {
+    background-color: #f1f1f1;
+}

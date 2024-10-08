@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    h1 {
+        color: #333;
+    }
+    input {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+    .button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #0056b3;
+    }
+    #result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    #result h2 {
+        color: #007BFF;
+    }
+</style>
+  <style>
+  
+  .search-container {
+      margin-top: 50px;
+      text-align: center;
+  }
+  input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+  button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+ 
+  .flip-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    perspective: 1000px;
+}
+
+.flip-content {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.loading-screen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.loading-screen img {
+    width: 50px;
+}
+
+.flip-container.flip {
+    transition: transform 2s;
+    transform: rotateY(180deg);
+}
+
+body.flip-active {
+    pointer-events: none;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>verse vault</title>
+<link rel="shortcut icon" href="images/verse vault.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<!-- Font Google -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+
+  <div class="container"> <a class="navbar-brand navbar-logo" href="#"> <img src="images/foursquare logo.png" alt="" width="80px" class="logo-1"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">  <li><a href="#connect" target="_blank" rel="noopener"><p style="color: #000203;">teleport to verse vault connect</p></a></li>
+        <li><a href="login.php"><button>fill our form if you have not</button></a>
+        </li>
+        <!---->>
+        
+        <li class="nav-item"> <a class="nav-link" href="" data-scroll-nav="0">Home</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="1">About</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="2">where fun begins</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="3">Team</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="4">Testimonials</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="5">Faq</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="6">Contact</a> </li>
+        <li><a href="test.html" target="_blank"><button>send feedback</button></a>
+        </li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Navbar --> 
+<!-------Banner Start------->
+
+
+
+ 
+<section class="banner" data-scroll-index='0'>
+  <div class="banner-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-12">
+          <div class="banner-text">
+            <h2 class="white">verse vault</h2>
+            <h6 class="white">Verse vault is a vault of scriptures for daily use</h6>
+            <p class="banner-text white">Let's continue</p>
+            <ul>
+              <li><a href="#"><img src="images/bible3.jpg" class="wow fadeInUp" data-wow-delay="0.4s"/></a></li>
+              <li><a href="#"><img src="images/bible.jpg" class="wow fadeInUp" data-wow-delay="0.7s"/></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12"> <img src="images/cross.jpg" class="img-fluid wow fadeInUp"/> <div class="container">
+          <h2 style="color:black">Welcome to Verse Vault</h2>
+          <div class="greeting">
+              <h2 style="color: black;">Hello,</h2>
+              <span class="username" id="usernameDisplay"></span>
+          </div>
+          <h2 style="color: black;">Thanks for sigining use versevault</h2>
+          <a href="test.html"><button>send feedback</button></a>
+      </div>
+  
+      <script>
+          // Retrieve the username from localStorage
+          const username = localStorage.getItem('username');
+          const usernameDisplay = document.getElementById('usernameDisplay');
+  
+          if (username) {
+              usernameDisplay.innerText = username;
+          } else {
+              usernameDisplay.innerText = "Guest ";
+          }
+      </script></div>
+      </div>
+    </div>
+    
+    <div class="notification" id="notification" hidden >
+      <div class="notification-icon" hidden>ℹ️</div>
+      <div class="notification-text"><a href="setting.html">get started</a><br>
+      <a href="david.html">view producer <br></a>
+      <a href="about.html" style="cursor: pointer;"> more about us</a>
+      </div>
+      <button class="close-btn" onclick="closeNotification()" style="cursor: pointer;">✖</button>
+    </div>
+  </div>
+  <span class="svg-wave"> <img class="svg-hero" src="images/applight-wave.svg"> </span> </section>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Type a word...">
+    <button onclick="search()">Search</button>
+</div>
+
+<!-- Example content to search through -->
+<p id="content">.</p>
+<p>.</p>
+<p></p>
+<!-------Banner End-------> 
+<div class="flip-container" id="flip-container">
+  <div class="flip-content">
+      <h1>Welcome to Verse Vault</h1>
+      <p>This page will redirect to VerseVault Connect login page.</p>
+      <button onclick="goToPage()">Go to verse vault connect</button>
+  </div>
+  <div class="loading-screen" id="loading-screen">
+      <img src="tenor.gif" alt="Loading" />
+      <p>You are going to an external page...</p>
+  </div>
+</div>
+
+<!-------About End------->
+
+<section class="about section-padding prelative" data-scroll-index='1'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center">
+          <h3>About</h3>
+          <span class="line"></span>
+          <p>Verse vault</p>
+        </div>
+        <div class="section-content text-center">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="icon-box wow fadeInUp" data-wow-delay="0.2s"> <div class="" aria-hidden="true"><img src="like.jpg" alt=""></div>
+                <h5>assurance</h5>
+                <p>verse vault is assuring you that you are Going to have a great time using Verse vault</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="icon-box wow fadeInUp" data-wow-delay="0.4s"> <div class="" aria-hidden="true"><img src="images/net.jpg" alt=""></div>
+                <h5>availability</h5>
+                <p>verse vault is available on eny browser even mobile it is cross platform</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="icon-box wow fadeInUp" data-wow-delay="0.6s"> <div class="" aria-hidden="true"><img src="images/bible3.jpg" alt=""></div>
+                <h5>verses</h5>
+                <p>verse vault is teling you that the verses will be intact</p>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" target="_blank" class="about-btn">Learn More</a> </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-------About End-------> 
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+<!-------Video Start------->
+<audio controls>
+  <source src="verse vault recording.m4a" type="audio/mpeg">
+  <source src="path/to/your-audio-file.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+<section class="video-section prelative text-center white">
+  <div class="section-padding video-overlay">
+    <audio src="verse vault recording.m4a" > listen to audio by Okeke David</audio><a href="verse vault recording.m4a" download> or download</a>
+    <audio src=""></audio>
+    <div class="container">
+      <h3>Watch Now or <a href="video/verse vault intro.mp4" download><button>watch later</button></a></h3>
+      <i class="fa fa-play" id="video-icon" aria-hidden="true"></i>
+      <div class="video-popup">
+        <div class="video-src">
+          <div class="iframe-src">
+            <iframe src="video/verse vault intro.mp4" allowfullscreen></iframe>
+            <a href="video/verse vault intro.mp4" download accesskey="shift+d alt+g"><button>download video</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-------Video End-------> 
+
+<!-------Features Start------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Scripture Search (Multiple Versions)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, select {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color:rgb(0, 0, 0);
+        }
+        #result h2 {
+            color: #000203;
+        }
+        #books {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search Bible Scripture (Multiple Versions)</h1>
+
+    <!-- Input for Bible verse reference -->
+    <input type="text" id="searchQuery" placeholder="Enter Bible verse (e.g. John 3:16)" oninput="searchBooks()">
+
+    <!-- Dropdown for Bible translation versions -->
+    <select id="versionSelect">
+        <option value="kjv">King James Version (KJV)</option>
+        <option value="web">World English Bible (WEB)</option>
+        <option value="asv">American Standard Version (ASV)</option>
+        <option value="darby">Darby Translation</option>
+        <option value="ylt">Young's Literal Translation</option>
+    </select>
+
+    <!-- Search button -->
+    <button onclick="searchScripture()">Search</button>
+
+    <!-- Result section -->
+    <div id="result"></div>
+    
+    <!-- Books list -->
+    <div id="books"></div>
+
+    <script>
+        const bibleBooks = [
+            "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy",
+            "Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel",
+            "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra",
+            "Nehemiah", "Esther", "Job", "Psalms", "Proverbs",
+            "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah", 
+            "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel", 
+            "Amos", "Obadiah", "Jonah", "Micah", "Nahum", 
+            "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi",
+            "Matthew", "Mark", "Luke", "John", "Acts",
+            "Romans", "1 Corinthians", "2 Corinthians", "Galatians", 
+            "Ephesians", "Philippians", "Colossians", "1 Thessalonians", 
+            "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", 
+            "Philemon", "Hebrews", "James", "1 Peter", "2 Peter",
+            "1 John", "2 John", "3 John", "Jude", "Revelation"
+        ];
+
+        function searchBooks() {
+            const query = document.getElementById('searchQuery').value.trim().toLowerCase();
+            const filteredBooks = bibleBooks.filter(book => book.toLowerCase().startsWith(query));
+
+            // Display filtered books
+            const booksDiv = document.getElementById('books');
+            booksDiv.innerHTML = filteredBooks.length > 0 
+                ? `<h2>Books starting with "${query.toUpperCase()}":</h2><ul>${filteredBooks.map(book => `<li>${book}</li>`).join('')}</ul>`
+                : '';
+        }
+
+        function searchScripture() {
+            const query = document.getElementById('searchQuery').value.trim();
+            const version = document.getElementById('versionSelect').value;
+
+            if (query === "") {
+                alert("Please enter a valid scripture reference.");
+                return;
+            }
+
+            // Construct the API URL with the selected version
+            fetch(`https://bible-api.com/${query}?translation=${version}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('result').innerHTML = `<p>Scripture not found. Please try again.</p>`;
+                    } else {
+                        document.getElementById('result').innerHTML = `
+                            <h2>${data.reference}</h2>
+                            <p>${data.text}</p>
+                            <p><strong>Translation: ${data.translation_name}</strong></p>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('result').innerHTML = `<p>Error retrieving scripture. Please try again later.</p>`;
+                    console.error("Error fetching data: ", error);
+                });
+        }
+    </script>
+
+</body>
+</html>
+
+<section class="feature section-padding" data-scroll-index='2'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center">
+          <h3>vault</h3>
+          <span class="line"></span>
+          <p>select if not there select more.</p>
+        </div>
+        <div class="section-content text-center">
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="media single-feature wow fadeInUp" data-wow-delay="0.2s">
+                <div class="    ">
+                  <h5></h5>
+                  <p></p>
+                </div>
+                <div class=""> <span class="" aria-hidden="true"></span> </div>
+              </div>
+              <div class="media single-feature wow fadeInUp" data-wow-delay="0.4s">
+                <div class="    ">
+                  <h5><a href="afraid.html"><button>when i am afraid</button></a></h5>
+                  <p><a href="afraid.html"><button>THE devil always grip people with fear</button></a></p>
+                </div>
+                <div class=""> <span class="" aria-hidden="true"></span> </div>
+              </div>
+              <div class="media single-feature wow fadeInUp" data-wow-delay="0.6s">
+                <div class="    ">
+                  <h5></h5>
+                  <p></p>
+                </div>
+                <div class=""> <span class="" aria-hidden="true"></span> </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-none d-md-block d-lg-block">
+              <div class="feature-mobile"> <img src="images/cross3.jpg" class="img-fluid wow fadeInUp"/> </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="media single-feature wow fadeInUp" data-wow-delay="0.2s">
+                <div class="  "> <span class="" aria-hidden="true"></span> </div>
+                <div class="media-body text-left">
+                  <h5></h5>
+                  <p></p>
+                </div>
+              </div>
+              <div class="media single-feature wow fadeInUp" data-wow-delay="0.4s">
+                <div class="  "> <span class="" aria-hidden="true"></span> </div>
+                <div class="media-body text-left">
+                  <h5><a href="family.html"><button>about family</button></a></h5>
+                  <p><a href="family.html"><button>features: father/husband, mother/wives,children</button></a></p>
+                </div>
+              </div>
+              <div class="media single-feature wow fadeInUp" data-wow-delay="0.6s">
+                <div class="  "> <span class="" aria-hidden="true"></span> </div>
+                <div class="media-body text-left">
+                  <h5><a href="setting.html
+                    "><button>more</button></a></h5>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-------Features End-------> 
+
+<!-------Team Start------->
+<section class="team section-padding" data-scroll-index='3'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center">
+          <h3>Our Team</h3>
+          <span class="line"></span>
+          <p>meet the team of verse vault.</p>
+        </div>
+        <div class="section-content text-center">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="team-detail wow bounce" data-wow-delay="0.2s"> <img src="" class="none"/>
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team-detail wow bounce" data-wow-delay="0.4s"> <img src="images/david.jpg" class="img-fluid"/>
+                <h4><a href="david.html"><button style="background-color: black;">Okeke David</button></a></h4>
+                <p> Founder/front end developer</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team-detail wow bounce" data-wow-delay="0.6s"> <img src="images/victor.png" class="img-fluid"/>
+                <h4>Victor essien</h4>
+                <p>Manager/supervisor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------Team End-------> 
+
+<!-------Testimonial Start------->
+<section class="testimonial section-padding" data-scroll-index='4'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center white">
+          <h3>Testimonials</h3>
+          <span class="line"></span>
+          <p class="white">here what others are saying about verse vault</p>
+        </div>
+    
+      <div class="section-content">
+        <div class="row">
+          <div class="offset-md-2 col-md-8 col-sm-12">
+            <div class="slider">
+              <div class="slider-item">
+                <div class="test-img"><img src="images/david.jpg" alt="Placeholder" width="157" height="157"></div>
+                <div class="test-text"><span class="title"><span>Okeke david</span> Digital Designer</span>  besides founding Verse vault i would like to say that the graphics and layout is Good <a href="https://chat.whatsapp.com/C7yR27TwhKrLWMkKzkqgr3" target="_blank">click to join community</a></div>
+              </div>
+              <div class="slider-item">
+                <div class="test-img"><img src="images/samuel.jpg" alt="Placeholder" width="157" height="157"></div>
+                <div class="test-text"><span class="title"><span>Samuel Uwagbor</span> App User</span> I love the layout of the place you will see your pictures and the way the bible is placed and the show more and read more the hover and the way the form is switching and the background of the page is changing  <a href="https://chat.whatsapp.com/C7yR27TwhKrLWMkKzkqgr3" target="_blank">click to join community</a></div>
+              </div>
+              <div class="slider-item">
+                <div class="test-img"><img src="images/user3.jpg" alt="Placeholder" width="157" height="157"></div>
+                <div class="test-text"><span class="title"><span></span> </span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------Testimonial End-------> 
+
+<!-------FAQ Start------->
+<section class="faq section-padding prelative" data-scroll-index='5' hidden>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center">
+          <h3>Frequently Asked Questions</h3>
+          <span class="line"></span>
+          <p>Sed quis nisi nisi. Proin consectetur porttitor dui sit amet viverra. Fusce sit amet lorem faucibus, vestibulum ante in, pharetra ante.</p>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-6 faq-content wow fadeInUp" data-wow-delay="0.2s">
+              <h4>Nam tellus felis, dignissim quis dui ?</h4>
+              <p>Suspendisse fermentum placerat enim, at pellentesque augue. Nullam elit est, ultricies et tellus ac, euismod placerat orci. Donec commodo.</p>
+            </div>
+            <div class="col-md-6 faq-content wow fadeInUp" data-wow-delay="0.2s">
+              <h4>Mauris scelerisque, dui non faucibus vulputate ?</h4>
+              <p>Sed tempus in neque ac rhoncus. Phasellus vehicula, erat tempor malesuada egestas, mauris tellus malesuada erat, at vestibulum nulla ex et lectus. Nullam elit est, ultricies et tellus ac, euismod placerat orci.</p>
+            </div>
+            <div class="col-md-6 faq-content wow fadeInUp" data-wow-delay="0.4s">
+              <h4>Nullam elit est, ultricies et tellus ac ?</h4>
+              <p>Ut vestibulum euismod aliquet. Quisque nec malesuada nibh. Vivamus euismod nunc eu leo faucibus, vel elementum justo posuere. In sed varius nisi. Curabitur id porta ipsum, et vestibulum dui.</p>
+            </div>
+            <div class="col-md-6 faq-content wow fadeInUp" data-wow-delay="0.4s">
+              <h4>Suspendisse fermentum placerat enim, at pellentesque augue elit est ?</h4>
+              <p>Vivamus euismod nunc eu leo faucibus, vel elementum justo posuere. In sed varius nisi.</p>
+            </div>
+            <div class="col-md-6 faq-content wow fadeInUp" data-wow-delay="0.6s">
+              <h4>Ut vestibulum euismod aliquet. Quisque nec malesuada nibh ?</h4>
+              <p>Suspendisse fermentum placerat enim, at pellentesque augue. Nullam elit est, ultricies et tellus ac, euismod placerat orci. Donec commodo dapibus congue.</p>
+            </div>
+            <div class="col-md-6 faq-content wow fadeInUp" data-wow-delay="0.6s">
+              <h4>Donec commodo dapibus congue ?</h4>
+              <p>Nullam elit est, ultricies et tellus ac, euismod placerat orci fermentum placerat enim, at pellentesque augue. Nullam elit est, ultricies et tellus ac, euismod placerat orci. Donec commodo dapibus congue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------FAQ End-------> 
+
+<!-------Contact Start------->
+<section class="contact section-padding" data-scroll-index='6'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center">
+          <h3>Contact us</h3>
+          <span class="line"></span>
+          <p><a href="https://chat.whatsapp.com/C7yR27TwhKrLWMkKzkqgr3" target="_blank"> Join community</a></p>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-8">
+              <form id="contact_form" action="">
+                <div class="row">
+                  <div class="col">
+                 
+               <a href="test.html"><button class="btn-grad w-100 text-uppercase" type="submit" name="button">send feedback</button></a> 
+              </form>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+              <div class="contact-info white">
+                <div class="contact-item media"> <i class="fa fa-map-marker-alt media-left media-right-margin"></i>
+                  <div class="media-body">
+                    <p class="text-uppercase">Address</p>
+                    <p class="text-uppercase">19 Ajayi aina sterrt ifako gbagada</p>
+                  </div>
+                </div>
+                <div class="contact-item media"> <i class="fa fa-mobile media-left media-right-margin"></i>
+                  <div class="media-body">
+                    <p class="text-uppercase">Phone</p>
+                    <p class="text-uppercase"><a class="text-white" href="tel:+2349077905429">+234 9077905429</a> </p>
+                  </div>
+                </div>
+                <div class="contact-item media"> <i class="fa fa-envelope media-left media-right-margin"></i>
+                  <div class="media-body">
+                    <p class="text-uppercase">E-mail</p>
+                    <p class="text-uppercase"><a class="text-white" href="https://mail.google.com/mail/?extsrc=mailto&url=mailto%3Aversevault74%2540gmail.com">versevault74@gmail.com </a> </p>
+                  </div>
+                </div>
+                <div class="contact-item media"> <i class="fa fa-clock media-left media-right-margin"></i>
+                  <div class="media-body">
+                    <p class="text-uppercase">Working Hours</p>
+                    <p class="text-uppercase">Online</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------Contact End-------> 
+
+<!-------Download End------->
+<section class="download section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center white">
+          <h3>give us your feedback</h3>
+          <a href="video.css">watch videos</a>
+          <span class="line"></span>
+          <p class="white">⬇⬇⬇⬇⬇⬇</p>
+          <a href="continue.html"><h2 href="">click me to tell verse vault some feedback</h2></a>
+        </div>
+      </div>
+      <a href="continue.html"><h1>continue</h1></a>
+      <div class="col-md-12">
+        <div class="section-content text-center">
+          <a href="share.html">share verse vault and what you like in it</a>
+          <ul>
+            <li><a href="#"><img src="images/cross2.jpg" class="wow fadeInUp" data-wow-delay="0.4s"/></a></li>
+            <li><a href="#"><img src="images/cross1.jpg" class="wow fadeInUp" data-wow-delay="0.7s"/></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------Download End------->
+
+<footer class="footer-copy">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <p>2024 &copy; For verse vault all right reserved for all pages <a href="david.html"><button>producer</button></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> 
+<!-- scrollIt js --> 
+<script src="js/scrollIt.min.js"></script> 
+<script src="js/wow.min.js"></script> 
+<script>
+  // Close notification function
+  function closeNotification() {
+      var notification = document.getElementById('notification');
+      notification.classList.add('fade-out'); // Add fade-out effect
+      setTimeout(function() {
+          notification.style.display = 'none'; // Hide the notification after fading out
+      }, 300); // Adjust the timeout to match the CSS transition duration
+  }
+</script>
+<script>
+  function search() {
+      // Remove any previous highlights
+      const highlighted = document.querySelectorAll('.highlight');
+      highlighted.forEach(el => el.classList.remove('highlight'));
+
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const content = document.getElementById('content').innerText.toLowerCase();
+
+      if (!query) {
+          alert("Please enter a search query.");
+          return;
+      }
+
+      if (content.includes(query)) {
+          const regex = new RegExp(query, 'gi');
+          const contentElement = document.getElementById('content');
+
+          // Highlight the word by wrapping it in a span with the "highlight" class
+          contentElement.innerHTML = contentElement.innerHTML.replace(regex, function(match) {
+              return `<span class="highlight">${match}</span>`;
+          });
+
+          // Scroll to the first highlighted word
+          const firstHighlight = document.querySelector('.highlight');
+          if (firstHighlight) {
+              firstHighlight.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+      } else {
+          alert("Word not found on this page.");
+      }
+  }
+</script>
+<script>function goToPage() {
+  // Start flip effect
+  document.getElementById('flip-container').classList.add('flip');
+  
+  // Show the loading screen after flip starts
+  setTimeout(() => {
+      document.getElementById('loading-screen').style.display = 'block';
+  }, 1000); // Show loading screen after 1 second
+
+  // Simulate a slow transition
+  setTimeout(() => {
+      // Redirect to the external page
+      window.location.href = "versevaultconnect/login.html";
+  }, 4000); // Redirect after 4 seconds
+}
+</script>
+<script>
+	wow = new WOW();
+	wow.init();
+$(document).ready(function(e) {
+
+	$('#video-icon').on('click',function(e){
+	e.preventDefault();
+	$('.video-popup').css('display','flex');
+	$('.iframe-src').slideDown();
+	});
+	$('.video-popup').on('click',function(e){
+	var $target = e.target.nodeName;
+	var video_src = $(this).find('iframe').attr('src');
+	if($target != 'IFRAME'){
+	$('.video-popup').fadeOut();
+	$('.iframe-src').slideUp();
+	$('.video-popup iframe').attr('src'," ");
+	$('.video-popup iframe').attr('src',video_src);
+	}
+	});
+
+	$('.slider').bxSlider({
+	pager: false
+	});
+});
+    
+$(window).on("scroll",function () {
+
+	var bodyScroll = $(window).scrollTop(),
+	navbar = $(".navbar");
+	
+	if(bodyScroll > 50){
+	$('.navbar-logo img').attr('src','images/foursquare logo.png');
+	navbar.addClass("nav-scroll");
+
+}else{
+	$('.navbar-logo img').attr('src','images/foursquare logo.png');
+	navbar.removeClass("nav-scroll");
+}
+
+});
+$(window).on("load",function (){
+	var bodyScroll = $(window).scrollTop(),
+	navbar = $(".navbar");
+	
+	if(bodyScroll > 50){
+	$('.navbar-logo img').attr('src','images/foursquare logo.png');
+	navbar.addClass("nav-scroll");
+	}else{
+	$('.navbar-logo img').attr('src','images/foursquare logo.png' );
+	navbar.removeClass("nav-scroll");
+	}
+
+	$.scrollIt({
+	
+	easing: 'swing',      // the easing function for animation
+	scrollTime: 900,       // how long (in ms) the animation takes
+	activeClass: 'active', // class given to the active nav element
+	onPageChange: null,    // function(pageIndex) that is called when page is changed
+	topOffset: -63
+	});
+});
+
+</script>
+<script src="sw.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

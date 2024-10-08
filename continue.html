@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Page</title>
+  <link rel="stylesheet" href="video.css">
+</head>
+<body>
+  <header>
+    <h1>watch videos</h1>
+  </header>
+
+  <main>
+    <!-- Video Container -->
+    <section class="video-section">
+      <video id="mainVideo" controls>
+        <source src="video/" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h2 id="videoTitle">Verse vault</h2>
+      <p id="videoDescription">watch these awsome videos.</p>
+    </section>
+    <input type="file" id="videoInput" accept=".mp4" style="display: none;" />
+    <button id="uploadButton">Upload Video</button>
+    
+    <script src="upload.js"></script>
+    <!-- Video Playlist -->
+    <section class="playlist-section">
+      <h3>More Videos</h3>
+      <ul id="videoPlaylist">
+        <li data-video="video/verse vault correct.mp4" data-title="Video 1" data-description="Description for video 1">Verse vault is motivating you</li>
+        <li data-video="video/verse vault intro.mp4" data-title="Video 2" data-description="meet the team and features of verse vault">meet the team of verse vault and features</li>
+        <li data-video="video/verse vault is telling you thank you.mp4" data-title="Video 3" data-description="verse vault is motivating you">our little way of saying thank you</li>
+        <li data-video="video/email us at.mp4" data-title="Video 3" data-description="verse vault is motivating you">email us</li>
+      </ul>
+    </section>
+<a href="index.html"><button>back</button></a>
+    <!-- Comments Section -->
+    <section class="comments-section">
+      <h3>Comments</h3>
+      <form id="commentForm">
+        <input type="text" id="username" placeholder="Your name" required>
+        <textarea id="commentText" placeholder="Add a comment..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+      <div id="commentsList"></div>
+    </section>
+  </main>
+
+  <script src="cames.js"></script>
+  <script src="comment.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+@keyframes changeColor {
+	0%   { background-color: #fdc305; } /* red */
+	25%  { background-color: #9485856c; } /* green */
+	50%  { background-color: #fdc305; } /* blue */
+	75%  { background-color: #94858585; } /* yellow */
+	100% { background-color: #fdc305; } /* back to red */
+  }
+  body{
+    display: flexbox;
+    animation: changeColor 15s infinite;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }

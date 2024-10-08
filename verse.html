@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Scripture Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #result h2 {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search Bible Scripture</h1>
+    <input type="text" id="searchQuery" placeholder="Enter Bible verse (e.g. John 3:16)">
+    <button class="button" onclick="searchScripture()">Search</button>
+
+    <div id="result"></div>
+
+    <script>
+        function searchScripture() {
+            const query = document.getElementById('searchQuery').value.trim();
+
+            if (query === "") {
+                alert("Please enter a valid scripture reference.");
+                return;
+            }
+
+            fetch(`https://bible-api.com/${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('result').innerHTML = `<p>Scripture not found. Please try again.</p>`;
+                    } else {
+                        document.getElementById('result').innerHTML = `
+                            <h2>${data.reference}</h2>
+                            <p>${data.text}</p>
+                            <p><strong>Translation: ${data.translation_name}</strong></p>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('result').innerHTML = `<p>Error retrieving scripture. Please try again later.</p>`;
+                    console.error("Error fetching data: ", error);
+                });
+        }
+    </script>
+
+</body>
+</html>

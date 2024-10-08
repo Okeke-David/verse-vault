@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .toggle-password {
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 38px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #4cae4c;
+        }
+        .form-toggle {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-toggle a {
+            color: #5cb85c;
+            text-decoration: none;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .password-requirements {
+            display: none;
+            font-size: 0.9em;
+            color: #555;
+            background: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .welcome-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: #5cb85c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="formTitle">Login</h2>
+        <form id="authForm" onsubmit="return handleLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <div style="position: relative;">
+                <input type="password" id="password" name="password" required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+        
+        <div class="form-toggle">
+            <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="signupContainer" style="display: none;">
+        <h2>Sign Up</h2>
+        <form id="signupForm" onsubmit="return handleSignup(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="signupUsername">Username:</label>
+            <input type="text" id="signupUsername" name="signupUsername" required>
+
+            <label for="signupPassword">Password:</label>
+            <div style="position: relative;">
+                <input type="password" id="signupPassword" name="signupPassword" required onfocus="showPasswordRequirements()">
+                <span class="toggle-password" onclick="toggleSignupPassword()">👁️</span>
+            </div>
+            <p class="password-requirements" id="passwordRequirements">
+                Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one special character.
+            </p>
+            <p class="error" id="passwordError"></p>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <div style="position: relative;">
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <span class="toggle-password" onclick="toggleConfirmPassword()">👁️</span>
+            </div>
+
+            <input type="submit" value="Sign Up">
+        </form>
+        
+        <div class="form-toggle">
+            <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+        </div>
+    </div>
+
+    <div class="welcome-message" id="welcomeMessage"></div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const passwordType = passwordInput.getAttribute('type');
+            passwordInput.setAttribute('type', passwordType === 'password' ? 'text' : 'password');
+        }
+
+        function toggleSignupPassword() {
+            const signupPasswordInput = document.getElementById('signupPassword');
+            const signupPasswordType = signupPasswordInput.getAttribute('type');
+            signupPasswordInput.setAttribute('type', signupPasswordType === 'password' ? 'text' : 'password');
+        }
+
+        function toggleConfirmPassword() {
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const confirmPasswordType = confirmPasswordInput.getAttribute('type');
+            confirmPasswordInput.setAttribute('type', confirmPasswordType === 'password' ? 'text' : 'password');
+        }
+
+        function toggleForms() {
+            const loginForm = document.getElementById('authForm').parentElement;
+            const signupForm = document.getElementById('signupContainer');
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                document.getElementById('formTitle').innerText = 'Login';
+                document.getElementById('welcomeMessage').style.display = 'none'; // Hide welcome message
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                document.getElementById('welcomeMessage').style.display = 'none'; // Hide welcome message
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+
+            // Store the username in localStorage
+            localStorage.setItem('username', username);
+
+            // Redirect to index.html after successful login
+            document.getElementById('welcomeMessage').innerText = `Welcome to Verse Vault, ${username}. Sign in successfully!`;
+            document.getElementById('welcomeMessage').style.display = 'block';
+
+            setTimeout(() => {
+                window.location.href = "index.html"; // Redirect after 2 seconds
+            }, 2000);
+        }
+
+        function validatePassword(password) {
+            const passwordError = document.getElementById('passwordError');
+            const passwordPattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+            if (!passwordPattern.test(password)) {
+                passwordError.innerText = "Password must be at least 8 characters long, include a number, a special character, and an uppercase letter.";
+                return false;
+            }
+
+            passwordError.innerText = "";
+            return true;
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const signupUsername = document.getElementById('signupUsername').value;
+
+            if (!validatePassword(password)) {
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("password do not match .");
+                return false;
+            }
+
+            // Store the username in localStorage
+            localStorage.setItem('username', signupUsername);
+
+            // Redirect to index.html after successful signup
+            document.getElementById('welcomeMessage').innerText = `Welcome to Verse Vault, ${signupUsername}. Sign up successfully!`;
+            document.getElementById('welcomeMessage').style.display = 'block';
+
+            setTimeout(() => {
+                window.location.href = "index.html"; // Redirect after 2 seconds
+            }, 2000);
+        }
+
+        function showPasswordRequirements() {
+            const passwordRequirements = document.getElementById('passwordRequirements');
+            passwordRequirements.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

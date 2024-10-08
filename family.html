@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Navigation</title>
+  <script>
+    function navigateTo(url) {
+      if (url) {
+        window.location.href = url;  // Redirect to the selected option's HTML page
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="family.css">
+  <link rel="shortcut icon" href="images/verse vault.png" type="image/x-icon">
+</head>
+<body>
+  <label for="familySelect">Choose a family member:</label> <br>
+  <select id="familySelect" onchange="navigateTo(this.value)">
+    <option value="">select your family member</option>
+    <option value="husband.html">Husband</option>
+    <option value="wife.html">Wife</option>
+    <option value="children.html">Children</option>
+    <option value="index.html">back</option>
+  </select>
+</body>
+</html>

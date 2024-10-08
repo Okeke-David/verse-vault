@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verse Vault</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #4CAF50;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home" id="homeTab">Home</a></li>
+            <li><a href="#net" id="netTab">Net</a></li>
+            <li><a href="#new" id="newTab">New Tab</a></li> <!-- New Tab Link -->
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <div id="homeContent">
+            <h2>Home</h2>
+            <p>Welcome to the Verse Vault!</p>
+        </div>
+        <div id="netContent" style="display: none;">
+            <h2>Net Tab Content</h2>
+            <p>This is the content for the Net tab.</p>
+        </div>
+        <div id="newContent" style="display: none;"> <!-- New Tab Content -->
+            <h2>New Tab Content</h2>
+            <p>This is the content for the New tab.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners for the tabs
+        document.getElementById('homeTab').addEventListener('click', function(event) {
+            event.preventDefault();
+            switchTab('homeContent');
+        });
+
+        document.getElementById('netTab').addEventListener('click', function(event) {
+            event.preventDefault();
+            switchTab('netContent');
+        });
+
+        document.getElementById('newTab').addEventListener('click', function(event) {
+            event.preventDefault();
+            switchTab('newContent'); // New tab's content
+        });
+
+        // Function to switch tabs
+        function switchTab(contentId) {
+            // Hide all content sections
+            document.querySelectorAll('#content > div').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Show the selected content section
+            document.getElementById(contentId).style.display = 'block';
+        }
+
+        // Show the home tab content by default
+        switchTab('homeContent');
+    </script>
+</body>
+</html>

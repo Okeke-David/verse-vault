@@ -1,0 +1,20 @@
+*{
+    background: linear-gradient(to left,cadetblue,lightblue,aqua,aquamarine);
+    text-decoration: none;
+  
+}
+.intro{
+    text-wrap:balance;
+    border: solid blue 2px;
+    border-radius: 111pc;
+}
+h2{
+    text-wrap:balance;
+    border: solid blue 2px;
+    border-radius: 111pc;
+    background: url(images/images.jpeg );
+}
+.result{
+  position: relative;
+  background-color: cyan;
+}

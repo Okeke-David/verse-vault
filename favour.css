@@ -1,0 +1,114 @@
+@keyframes changeColor {
+	0%   { background-color: #fdc305; } /* red */
+	25%  { background-color: #9485856c; } /* green */
+	50%  { background-color: #fdc305; } /* blue */
+	75%  { background-color: #94858585; } /* yellow */
+	100% { background-color: #fdc305; } /* back to red */
+  }
+  body{
+    display:flexbox;
+    animation: changeColor 15s infinite;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+	background: url(images/bible6.webp)no-repeat;
+	
+  }
+  .husband{
+    background-color: #fdc305;
+    
+  }
+  .wife{
+    background-color: #94858585;
+    
+  }
+  .children{
+    background-color: #fdc305;
+     
+  }
+  button{
+    width: 200px;
+    height:80px;
+    border-radius: 1pc;
+  }
+  button:hover{
+    background-color: bisque;
+    cursor: pointer;
+  }
+  
+  .navbar {
+	position:absolute;
+	right: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	min-height: 50px;
+	line-height: 50px;
+	background: transparent;
+	z-index: 1030;
+}
+.navbar .active {
+	color: #5f0099 !important;
+}
+.navbar .navbar-brand {
+	background-color: #5f0099;
+}
+.navbar .nav-item {
+	margin: 0 5px;
+	padding: 0;
+}
+.navbar .nav-item a {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 13px;
+}
+.navbar .nav-item a:hover {
+	color: #5f0099;
+}
+.navbar .nav-link {
+	position: relative;
+	padding: 0;
+}
+.navbar .navbar-toggler {
+	cursor: pointer;
+}
+.navbar .navbar-toggler span {
+	color: #fff;
+}
+.navbar-style2 .active:after, .navbar-style2 .nav-link:after {
+	display: none;
+}
+.nav-scroll {
+	background: #9485853d;
+	-webkit-box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.0509803922);
+	box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.0509803922);
+	-webkit-transition: all .4s ease;
+	transition: all .4s ease;
+}
+.nav-scroll .navbar-nav > li > a {
+	color: #333;
+}
+.nav-scroll .navbar-brand img {
+	-webkit-transform: scale(1.03) !important;
+	transform: scale(1.03) !important;
+}
+.nav-scroll .navbar-toggler {
+	cursor: pointer;
+}
+.nav-scroll .navbar-toggler span {
+	color: #333;
+}
+.nav-scroll .nav-link:hover:after {
+	background-color: #2388ed;
+}
+.nav-scroll .active {
+	position: relative;
+}
+.p{
+	background: rgba(64, 224, 208, 0.247);
+	font-weight: bolder;
+	font-style: italic;
+	font-variant-emoji: ⚡;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verse Vault - Feedback</title>
+    <link rel="shortcut icon" href="images/verse vault.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .greeting {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .username {
+            color: #5cb85c;
+        }
+        .feedback-section {
+            margin-top: 30px;
+        }
+        .feedback-section textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none; /* Disable resizing */
+        }
+        .feedback-section input[type="submit"] {
+            padding: 10px 20px;
+            background: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .feedback-section input[type="submit"]:hover {
+            background: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Verse Vault feedback session</h2>
+        <div class="greeting">
+            <span class="username" id="usernameDisplay">Hello,</span>
+            <span ></span>
+        </div>
+        <p>plz ensure you allow verse vault to take you to an external page</p>
+
+        <div class="feedback-section">
+            <h3>Feedback</h3>
+            <textarea id="feedback" placeholder="Type your feedback here..."></textarea>
+            <input type="submit" value="Send Feedback" onclick="sendFeedback()">
+        </div>
+    </div>
+
+    <script>
+        // Retrieve the username from localStorage
+        const username = localStorage.getItem('username');
+        const usernameDisplay = document.getElementById('usernameDisplay');
+
+        if (username) {
+            usernameDisplay.innerText = username;
+        } else {
+            usernameDisplay.innerText = "Guest fill our form for us to address you properly";
+        }
+
+        function sendFeedback() {
+            const feedbackText = document.getElementById('feedback').value;
+            const email = "versevault74@gmail.com";
+            const subject = "Feedback from a Verse Vault User";
+            const body = encodeURIComponent(feedbackText);
+
+            if (feedbackText.trim() === "") {
+                alert("Please enter your feedback before sending.");
+                return;
+            }
+
+            const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+    <h2><a href="index.html">back</a></h2>
+</body>
+</html>

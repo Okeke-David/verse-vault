@@ -1,0 +1,17 @@
+@keyframes changeColor {
+	0%   { background-color: #130e00; } /* red */
+	25%  { background-color: #948585; } /* green */
+	50%  { background-color: #fdc305; } /* blue */
+	75%  { background-color: #0a0000; } /* yellow */
+	100% { background-color: #474745; } /* back to red */
+  }
+  body{
+    animation: changeColor 50s infinite;
+    background: linear-gradient(to left, #0a0000,);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+button{
+    width: 180px;
+}
